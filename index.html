@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lago Kache</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body id="top">
+
+    <!-- Fixed Navigation Bar -->
+    <nav id="main-nav" class="fixed-nav">
+        <div class="nav-content">
+            <!-- Logo (Gold Highlight) -->
+            <a href="#top" class="logo">Lago Kache</a>
+            
+            <!-- Hamburger Menu Button -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
+                <!-- Hamburger Icon (Visible by Default) -->
+                <svg id="menu-icon-open" class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <!-- Close Icon (Hidden by Default using the 'hidden' class) -->
+                <svg id="menu-icon-close" class="menu-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <!-- Full-Page Menu (Dark Background, Centered Gold/White Text) -->
+    <div id="full-menu" class="full-menu">
+        <ul class="menu-list">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#features" onclick="closeMenu()">Features</a></li>
+            <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+            <li><a href="#location" onclick="closeMenu()">Location</a></li>
+            <li><a href="#hours" onclick="closeMenu()">Hours</a></li>
+        </ul>
+    </div>
+
+
+    
+    <!-- Anchor for home section and spacing from fixed header -->
+    <div id="home"></div>
+
+
+
+    <!-- 1. Hero Header Slideshow -->
+    <header class="hero-header">
+        <div id="hero-slider">
+            <!-- 5 Placeholder Images - Note: Using placehold.co for simple placeholder images -->
+            <div class="hero-slide" style="background-image: url('./images/interior_1.jpg');">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">Experience Premium Comfort</h1>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('./images/interior_2.jpg');">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">Unwind in Style</h1>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('./images/interior_3.jpg');">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">Perfect Ambiance</h1>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('./images/food_1.jpg');">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">Vibrant, Appetizing Haitian Cuisine</h1>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('./images/interior_4.jpg');">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">The Perfect Night Out</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- 2. Header and Paragraph Combination -->
+    <section class="content-section">
+        <h2 class="content-header">Discover Your New Favorite Spot</h2>
+        <p class="content-text">
+            Welcome to Lago Kache, a taste of Ayiti in the heart of Brooklyn. We are not just a restaurant, but a focal point in our community, making space for celebration large and small. Whether you are craving our signature Griot, celebrating a milestone, or settling in for an evening of Live Haitian Mizik, an evening at Lago Kache will connect you with our culture.
+        </p>
+    </section>
+
+
+
+    <!-- 3. Feature List (3 items) -->
+    <section id="features">
+        <div class="features-grid">
+            <!-- Feature Item 1 -->
+            <div class="feature-item">
+                <img src="./images/food_3.jpg" alt="Quiet Workspace" class="feature-image">
+                <h3 class="feature-title">Authentic Haitian Cuisine</h3>
+                <p class="feature-description">Dive into the bold flavors of the Caribbean with our traditional dishes, featuring savory Griot, rich Legume, and our signature Diri Djon Djon.</p>
+                <button class="cta-button">Peruse the Menu</button>
+            </div>
+            <!-- Feature Item 2 -->
+            <div class="feature-item">
+                <img src="./images/interior_2.jpg" alt="Gourmet Refreshments" class="feature-image">
+                <h3 class="feature-title">Specialty Beverages</h3>
+                <p class="feature-description">Savour our collection of aged rums and bespoke cocktails, perfectly balancing Caribbean tradition with modern mixology</p>
+                <button class="cta-button">See Gallery</button>
+            </div>
+            <!-- Feature Item 3 -->
+            <div class="feature-item">
+                <img src="./images/interior_3.jpg" alt="Ambient Lighting" class="feature-image">
+                <h3 class="feature-title">Elegant Private Parties</h3>
+                <p class="feature-description">Celebrate your milestones in style. Our versatile and sophisticated venue is the perfect backdrop for birthdays, weddings, and exclusive gatherings.</p>
+                <button class="cta-button">Make a Reservation</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 4. Image Gallery Slider with Indicator -->
+    <section id="gallery">
+        <h2 class="gallery-header">Interior Gallery</h2>
+        <div class="gallery-wrapper">
+            <!-- Slider Track -->
+            <div id="gallery-slider" class="slider-container">
+                <img src="./images/gallery1.jpg">
+                <img src="./images/gallery2.jpg">
+                <img src="./images/gallery3.jpg">
+                <img src="./images/gallery4.jpg">
+                <img src="./images/gallery5.jpg">
+                <img src="./images/gallery6.jpg">
+                <img src="./images/gallery7.jpg">
+                <img src="./images/gallery8.jpg">
+                <img src="./images/gallery9.jpg">
+                <img src="./images/gallery10.jpg">
+                <img src="./images/gallery11.jpg">
+                <img src="./images/gallery12.jpg">
+                <img src="./images/gallery13.jpg">
+                <img src="./images/gallery14.jpg">
+                <img src="./images/gallery15.jpg">
+                <img src="./images/gallery16.jpg">
+                <img src="./images/gallery17.jpg">
+            </div>
+
+            <!-- Indicator Dots -->
+            <div id="gallery-indicator" class="gallery-indicator">
+                <!-- Dots generated by JS -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 5. Reservation Maker -->
+    <section id="reservations" class="content-section">
+        <h2 class="gallery-header">Request a Reservation</h2>
+        <form id="reservation-form">
+            <p class="content-text" style="font-size: 0.9rem; margin-top: -1rem; margin-bottom: 2rem;">
+                Please note: Submitting this form sends a request; your reservation is confirmed upon receipt of a direct email from our team.
+            </p>
+
+            <div class="form-group">
+                <label for="user_name">Full Name</label>
+                <input type="text" id="user_name" name="user_name" placeholder="John or Jane Doe" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="reservation_date">Date</label>
+                    <input type="date" id="reservation_date" name="reservation_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservation_time">Time</label>
+                    <input type="time" id="reservation_time" name="reservation_time" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="party_size">Number of Guests</label>
+                    <select id="party_size" name="party_size" required>
+                        <option value="" disabled selected>Select size</option>
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6+ people (Contact for large parties)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="user_phone">Phone Number</label>
+                    <input type="tel" id="user_phone" name="user_phone" placeholder="(555) 555-1234" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="user_email">Email Address (for confirmation)</label>
+                <!-- This field is used to send the confirmation email directly to the user -->
+                <input type="email" id="user_email" name="user_email" placeholder="you@example.com" required>
+            </div>
+
+            <button type="submit" id="submit-btn" class="submit-button">
+                <span id="button-text">Submit Reservation Request</span>
+            </button>
+            <div id="form-message" class="form-message hidden"></div>
+        </form>
+    </section>
+
+
+    <!-- 5. Google Maps Location -->
+    <section id="location">
+        <h2 class="gallery-header">Find us in Brooklyn, NYC</h2>
+        <div class="map-container">
+            <!-- Mock Google Maps Embed for a generic location (e.g., Manhattan, NY) -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7077695844053!2d-73.9458287236531!3d40.6358488753238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c244c9b13977c3%3A0xc399583b27b47b4!2s2192%20Flatbush%20Ave%2C%20Brooklyn%2C%20NY%2011234%2C%20USA!5e0!3m2!1sen!2sus!4v1678896000000!5m2!1sen!2sus"
+                aria-label="Lakay Brooklyn Location Map at 2192 Flatbush Ave" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+
+
+    <!-- 6. Footer Section -->
+    <footer id="hours" class="site-footer">
+        <div class="footer-grid">
+            
+            <!-- Logo & Contact Info -->
+            <div class="contact-info">
+                <h3 class="footer-heading">Lago Kache</h3>
+                <p><strong>Address:</strong> 2192 Flatbush Ave, Brooklyn, NY, 11234</p>
+                <p><strong>Phone:</strong> (347) 705 - 8181 </p>
+                <p><strong>Email:</strong> LagoKacheNYC@gmail.com</p>
+            </div>
+
+            <!-- Operating Hours List -->
+            <div class="hours-section">
+                <h3 class="footer-heading">Operating Hours</h3>
+                <div class="hours-list">
+                    <p><strong>Monday</strong></p><p>1:00 PM - 11:00 PM</p>
+                    <p><strong>Tuesday - Wednesday</strong></p><p>12:00 PM - 11:00 PM</p>
+                    <p><strong>Thursday - Sunday</strong></p><p>12:00 PM - 12:00 AM</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            &copy; 2025 Lago Kache. All rights reserved.
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    
+    (function() {
+       emailjs.init({
+         publicKey: "ndYyHqewf0kLoDuxh",
+       });
+    })();
+
+    // --- EmailJS Template & Service IDs (REPLACE PLACEHOLDERS) ---
+    const PUBLIC_KEY = "ndYyHqewf0kLoDuxh"; 
+    const SERVICE_ID = "lagolagoKacheKache"; 
+    const BUSINESS_TEMPLATE_ID = "LKResv_business"; 
+    const CONFIRMATION_TEMPLATE_ID = "LKResv_customer";
+
+    // Global elements
+    const reservationForm = document.getElementById('reservation-form');
+    const submitButton = document.getElementById('submit-btn');
+    const formMessage = document.getElementById('form-message');
+
+    // Helper function to check if the placeholders are still active
+    const usingPlaceholders = () => PUBLIC_KEY.startsWith('YOUR') || 
+                                   SERVICE_ID.startsWith('YOUR') || 
+                                   BUSINESS_TEMPLATE_ID.startsWith('YOUR') || 
+                                   CONFIRMATION_TEMPLATE_ID.startsWith('YOUR');
+
+
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined' && !usingPlaceholders()) {
+         emailjs.init({ publicKey: PUBLIC_KEY });
+    } else if (typeof emailjs !== 'undefined' && usingPlaceholders()) {
+         // Console Warning when placeholders are present
+         console.warn("EmailJS Setup Incomplete: Please replace the placeholder IDs in the script block to enable reservation emails.");
+    }
+
+
+    // --- Helper Function for Messages ---
+        function showMessage(type, message) {
+            // Find the message box inside the handler scope
+            const formMessage = document.getElementById('form-message');
+            if (!formMessage) {
+                console.error("Could not find #form-message element.");
+                return;
+            }
+            formMessage.classList.remove('hidden', 'success', 'error');
+            formMessage.classList.add(type);
+            formMessage.textContent = message;
+        }
+
+        // --- Reservation Submission Logic (using EmailJS) ---
+        // Find form globally to attach listener
+        // const reservationForm = document.getElementById('reservation-form');
+        if (reservationForm) {
+            reservationForm.addEventListener('submit', handleReservationSubmit);
+        } else {
+            console.error("Initialization Error: Could not find #reservation-form element to attach listener.");
+        }
+
+
+        function handleReservationSubmit(e) {
+            e.preventDefault();
+
+            // Clear previous messages
+            formMessage.classList.add('hidden');
+            submitButton.textContent = "Sending Request...";
+
+            // Collect all form data (using input 'name' attributes matching template variables)
+
+            const rawTime = document.getElementById('reservation_time').value;
+            const timeParts = rawTime.split(':');
+            const hours24 = parseInt(timeParts[0], 10); // Explicitly parse base 10
+            const minutes = timeParts[1];
+            let hours12 = hours24 % 12;
+            hours12 = hours12 ? hours12 : 12; // The hour '0' should be '12'
+            const ampm = hours24 >= 12 ? 'PM' : 'AM';
+
+            // 4. Format the final 12-hour string (e.g., "6:30 PM")
+            const finalTime12hr = `${hours12}:${minutes} ${ampm}`;
+
+            const templateParams = {
+                user_name: document.getElementById('user_name').value,
+                user_email: document.getElementById('user_email').value,
+                user_phone: document.getElementById('user_phone').value,
+                reservation_date: document.getElementById('reservation_date').value,
+                reservation_time: finalTime12hr,
+                party_size: document.getElementById('party_size').value,
+            };
+
+            // 1. Send Notification to Business
+            const sendBusiness = emailjs.send(SERVICE_ID, BUSINESS_TEMPLATE_ID, templateParams);
+
+            // 2. Send Confirmation to User
+            const sendConfirmation = emailjs.send(SERVICE_ID, CONFIRMATION_TEMPLATE_ID, templateParams);
+
+            Promise.all([sendBusiness, sendConfirmation])
+                .then((responses) => {
+                    const allSuccess = responses.every(response => response.status === 200);
+                    if (allSuccess) {
+                        showMessage('success', "Success! Your reservation request has been sent. Check your email for confirmation.");
+                        document.getElementById('reservation-form').reset();
+                    } else {
+                        throw new Error("One or more emails failed to send.");
+                    }
+                })
+                .catch((error) => {
+                    console.error('EmailJS Error:', error);
+                    showMessage('error', "An error occurred while submitting your request. Please try again or call us.");
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Request Reservation";
+                });
+        }
+
+</script>
+</body>
+</html>
