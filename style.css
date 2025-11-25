@@ -322,6 +322,15 @@ section#gallery {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+    max-width: 860px;
+    max-height: 512px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .slider-container img{
+        height: 256px;
+    }
 }
 
 .slider-container::-webkit-scrollbar {
@@ -331,7 +340,8 @@ section#gallery {
 .slider-container img {
     flex-shrink: 0;
     width: 100%;
-    height: 256px; /* 64 * 4px = 256px */
+    max-height: 512px; 
+    /* 64 * 4px = 256px */
     object-fit: cover;
     scroll-snap-align: center;
 }
