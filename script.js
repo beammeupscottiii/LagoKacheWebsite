@@ -106,3 +106,142 @@ gallerySlider.addEventListener('scroll', () => {
         updateGallerySlider(false); 
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.video-gallery-container');
+    const videos = document.querySelectorAll('.video-slide video');
+    const progressBar = document.querySelector('.progress-bar');
+    const totalVideos = videos.length; // Should be 14
+    const unitPercentage = 100 / totalVideos; // 100 / 14 ≈ 7.14%
+    let scrollTimeout;
+
+    // --- 1. LOGIC TO FIND CURRENT SLIDE (Same as before) ---
+    const getCurrentSlideIndex = () => {
+        const scrollPosition = container.scrollLeft;
+        const containerWidth = container.offsetWidth;
+        return Math.round(scrollPosition / containerWidth);
+    };
+    
+    // --- 2. VIDEO AND PROGRESS BAR UPDATE ---
+    const updateUI = (currentIndex) => {
+        // --- VIDEO CONTROL ---
+        videos.forEach((video, index) => {
+            if (index === currentIndex) {
+                video.play().catch(error => {
+                    console.log('Video playback failed:', error.message);
+                });
+            } else {
+                video.pause();
+                video.currentTime = 0; 
+            }
+        });
+        
+        // --- PROGRESS BAR CONTROL ---
+        // Calculate the new width: (Current Slide Index + 1) * Unit Percentage
+        const newWidth = (currentIndex + 1) * unitPercentage;
+        progressBar.style.width = `${newWidth}%`;
+    };
+
+    // --- 3. SCROLL LISTENER (Debounced) ---
+    container.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+
+        // Wait a short delay to ensure scrolling has stopped and the slide is snapped
+        scrollTimeout = setTimeout(() => {
+            const currentSlideIndex = getCurrentSlideIndex();
+            updateUI(currentSlideIndex);
+        }, 150); 
+    });
+
+    // --- 4. INITIAL STATE ---
+    // Start by updating the UI for the very first video (index 0)
+    updateUI(0); 
+});
+
+//Video Gallery
+// document.addEventListener('DOMContentLoaded', () => {
+//     const container = document.querySelector('.video-gallery-container');
+//     const videoSlides = document.querySelectorAll('.video-slide');
+//     const videos = document.querySelectorAll('.video-slide video');
+//     const indicatorBar = document.querySelector('.videoIndicators');
+//     const totalVideos = videos.length;
+//     let scrollTimeout;
+
+//     const initializeIndicators = () => {
+//         for (let i = 0; i < totalVideos; i++) {
+//             const dot = document.createElement('span');
+//             dot.classList.add('indicator-dot');
+//             dot.dataset.index = i; // Store the index for easy lookup
+//             indicatorBar.appendChild(dot);
+//         }
+//         // Get the created dots
+//         return document.querySelectorAll('.indicator-dot');
+//     };
+
+//     const indicatorDots = initializeIndicators();
+
+//     /**
+//      * Finds the index of the video slide currently centered in the viewport.
+//      * The scroll position divided by the container width gives the index (0, 1, 2, etc.).
+//      */
+//     const getCurrentSlideIndex = () => {
+//         // scrollLeft is the distance scrolled from the start
+//         const scrollPosition = container.scrollLeft;
+//         // offsetWidth is the visible width of the container
+//         const containerWidth = container.offsetWidth;
+        
+//         // Use Math.round to account for partial scrolls and snap behavior
+//         return Math.round(scrollPosition / containerWidth);
+//     };
+
+//     /**
+//      * Pauses all videos and plays the video at the specified index.
+//      */
+//     const controlVideoPlayback = (currentIndex) => {
+
+//         videos.forEach((video, index) => {
+//             if (index === currentIndex) {
+//                 // This is the current slide, attempt to play it
+//                 // Note: Mobile browsers often require user interaction (a tap)
+//                 // before videos can autoplay, even with this call.
+//                 video.play().catch(error => {
+//                     // Handle potential promise rejection if playback fails (e.g., no user interaction)
+//                     console.log('Video playback failed:', error.message);
+//                 });
+//             } else {
+//                 // Pause all other videos
+//                 video.pause();
+//                 // Optionally reset the video to the beginning
+//                 video.currentTime = 0; 
+//             }
+//         });
+
+//         indicatorDots.forEach((dot, index) => {
+//             if (index === currentIndex) {
+//                 dot.classList.add('active');
+//             } else {
+//                 dot.classList.remove('active');
+//             }
+//         });
+//     };
+
+//     /**
+//      * Event listener for scrolling.
+//      * We use a debounce timeout to only act when scrolling has stopped.
+//      */
+//     container.addEventListener('scroll', () => {
+//         // Clear the previous timeout so it doesn't fire while the user is actively scrolling
+//         clearTimeout(scrollTimeout);
+
+//         // Set a new timeout to fire after scrolling has been inactive for 150ms
+//         scrollTimeout = setTimeout(() => {
+//             const currentSlideIndex = getCurrentSlideIndex();
+//             controlVideoPlayback(currentSlideIndex);
+//         }, 150); // Adjust this delay as needed
+//     });
+
+//     // Initial check on page load to play the first video (index 0)
+//     // You might want to defer this until the user interacts with the page for mobile compatibility
+//     controlVideoPlayback(0); 
+// });

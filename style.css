@@ -370,6 +370,130 @@ section#gallery {
 }
 
 
+
+
+/* --- 6. Reservation System --- */
+
+section#videos h2.header {
+    font-family: var(--text-heading);
+    font-size: 2rem;
+    font-weight: 700;
+/*    color: var(--color-dark);*/
+    color: #636363;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.video-gallery-container {
+  /* Use full viewport height for a TikTok/Reels-style experience */
+/*  height: 100vh; */
+/*  width: 100vw;*/
+  
+  /* Hides the horizontal scrollbar */
+  overflow-x: scroll; 
+  overflow-y: hidden;
+  
+  /* CRITICAL: Defines the swiping/snapping behavior */
+  scroll-snap-type: x mandatory; 
+  
+  /* Removes extra padding often found on body/html */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+  
+  /* Smoother scrolling on touch devices */
+  -webkit-overflow-scrolling: touch; 
+}
+
+/* --- 2. Inner Gallery: Holds all 14 videos horizontally --- */
+.video-gallery {
+  display: flex;
+  height: 100%;
+  
+  /* 14 slides wide: 14 * 100% = 1400% */
+  width: 1400%; 
+}
+
+/* --- 3. Single Slide: Defines the size and snap point for each video --- */
+.video-slide {
+  /* Each slide takes up exactly 1/14th of the total gallery width (i.e., 100% of the container width) */
+  flex: 0 0 calc(100% / 14); 
+  
+  /* CRITICAL: Ensures the browser snaps to the start edge of the slide */
+  scroll-snap-align: start; 
+  
+  /* Center the video element inside its container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- 4. Video Element: Ensures 9:16 aspect ratio --- */
+.video-slide video {
+  /* Video should fill the height of the slide */
+  height: 100%; 
+  width: auto; /* Let the aspect ratio define the width */
+  max-width: 100%; 
+
+  /* CRITICAL: Forces the 9:16 portrait ratio */
+  aspect-ratio: 9 / 16; 
+  
+  /* Ensures the video covers the entire viewport area without letterboxing */
+  object-fit: cover; 
+}
+
+/* --- Indicator Bar CSS --- */
+.videoIndicators {
+  position: absolute;
+/*  bottom: 20px; */
+  left: 50%;
+  transform: translateX(-50%); /* Center the indicators horizontally */
+  margin-top: 24px;
+  display: flex;
+  gap: 8px; /* Space between the dots */
+  z-index: 10; /* Ensure they appear above the videos */
+}
+
+/* --- Individual Indicator Dot CSS --- */
+.indicator-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent white for inactive */
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* --- Active Dot Styling --- */
+span.indicator-dot.active {
+  background-color: #000000;
+  transform: scale(1.2); 
+}
+
+
+.video-indicators-bar-container {
+  position: absolute;
+/*  bottom: 20px; /* Position bar 20px from the bottom */
+  margin-top: 24px;
+  left: 50%;
+  transform: translateX(-50%); /* Center the bar */
+  width: 90%; /* Make it span most of the screen width */
+  height: 4px; /* Thin track height */
+  background-color: rgba(0, 0, 0, 0.3); /* Light, translucent track color */
+  border-radius: 2px;
+  z-index: 10; 
+}
+
+/* --- Progress Bar: The Filling Element --- */
+.progress-bar {
+  height: 100%;
+  width: 7.14%; /* Start at 1/14th of the total width (100%/14 ≈ 7.14%) */
+  background-color: #000000; /* Solid white progress color */
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out; /* Smooth animation when scrolling */
+}
+
+
 /* --- 6. Reservation System --- */
 
 #reservation-form {
