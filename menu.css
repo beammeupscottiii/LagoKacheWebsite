@@ -67,6 +67,10 @@ footer {
     flex-shrink: 0; /* Prevents the links from squishing */
 }
 
+.sticky-nav a:first-child {
+    color: gold;
+}
+
 .sticky-nav a:active {
     color: #666; /* Visual feedback when tapped */
 }

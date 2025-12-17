@@ -2,6 +2,10 @@
 #### Restaurant Website
 
 ----------------------------------------------------------------------------------------
+### 12. 17. 2025
+@0755 Menu up and fully styled
+Maybe should add 'back to main site' button on menu page?
+
 ### 12. 16. 2025
 @0730 have to finish up menu, add header image, attach to main site
 probably add a section and a button for it,
