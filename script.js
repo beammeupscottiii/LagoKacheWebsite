@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 4. INITIAL STATE ---
     // Start by updating the UI for the very first video (index 0)
     // updateUI(0); 
-    document.body.addEventListener('click', () => {
+    document.container.addEventListener('click', () => {
         updateUI(0);
     }, { once: true });
 });
