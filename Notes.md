@@ -2,6 +2,11 @@
 #### Restaurant Website
 
 ----------------------------------------------------------------------------------------
+### 12. 16. 2025
+@0730 have to finish up menu, add header image, attach to main site
+probably add a section and a button for it,
+nav menu option goes to a different page
+
 ### 12. 14. 2025
 @1730 Added video gallery and changed indicator implementation
 

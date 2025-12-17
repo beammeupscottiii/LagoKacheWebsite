@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Basic Reset for Mobile-First */
+body {
+    font-family: sans-serif; /* Use a clean, readable font */
+    margin: 0;
+    padding: 20px;
+    background-color: #F9F6EE;
+    color: #333;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+    /* Adds offset so the sticky nav doesn't cover the title you jump to */
+    scroll-padding-top: 80px; 
+}
+
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-sizing: border-box;
+    padding: 16px 12px;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 18px;
+}
+
+/* Update or add this to your styles.css */
+.sticky-nav {
+    width: 100%;
+    position: -webkit-sticky; /* Support for Safari */
+    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto; /* Allows horizontal swiping */
+    white-space: nowrap;
+    padding: 12px 0;
+    border-bottom: 2px solid #333;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle depth */
+    scrollbar-width: none; /* Hides scrollbar on Firefox */
+}
+
+/* Hides scrollbar for Chrome, Safari, and Opera */
+.sticky-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.sticky-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 0.85em;
+    padding: 8px 18px;
+    text-transform: uppercase;
+    flex-shrink: 0; /* Prevents the links from squishing */
+}
+
+.sticky-nav a:active {
+    color: #666; /* Visual feedback when tapped */
+}
+
+
+div#headerWrapper {
+    margin: 48px auto 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+div#headerWrapper img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu-section {
+    /* Constrain the width on larger screens while still being full-width on mobile */
+    max-width: 600px; 
+    margin: 48px auto;
+}
+
+.category-title {
+    font-family: 'Cinzel Decorative', serif;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #333; /* Separator line for the category */
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: -20px; /* Pulls it closer to the Category Title */
+    margin-bottom: 30px;
+    font-size: 0.9em;
+    padding: 0 10px;
+}
+
+/* Individual Dish Styling */
+.menu-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc; /* Subtle separator between items */
+}
+
+/* Alignment for Name and Price on the same line */
+.item-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between; /* Pushes name and price to edges */
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+/* Styling for the Name and Price */
+.dish-name,
+.dish-price {
+    font-size: 1.1em;
+    font-weight: 700; /* Makes both name and price bold */
+    text-transform: uppercase; /* Optional: Make name stand out */
+}
+
+.dish-name {
+    font-weight: 500;
+}
+
+.dish-price {
+    /* Ensures the price doesn't wrap awkwardly next to the name */
+    white-space: nowrap; 
+    padding-left: 10px; /* Space between long name and price */
+}
+
+/* Styling for the Item Description/Options */
+.item-description {
+    font-size: 0.95em;
+    color: #666;
+    margin-top: 5px;
+    line-height: 1.4;
+}

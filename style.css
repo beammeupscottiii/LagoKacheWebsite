@@ -293,6 +293,42 @@ h2.content-header {
     transform: translateY(-1px);
 }
 
+
+
+
+
+/* --- Menu Button --- */
+
+section#menu {
+}
+
+
+section#menu a {
+    width: fit-content;
+    padding: 1rem;
+    font-size: 1.125rem;
+    background-color: var(--color-accent-brown);
+    color: var(--color-light);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 24px auto;
+    /*left: 50%;
+    transform: translateX(-50%);*/
+}
+
+
+
+
+
+
+
 /* --- 5. Gallery Slider --- */
 
 section#gallery {
