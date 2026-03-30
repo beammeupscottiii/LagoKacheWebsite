@@ -2,6 +2,9 @@
 #### Restaurant Website
 
 ----------------------------------------------------------------------------------------
+### 03. 30. 2026
+@1215 Added Social Media Buttons to bottom
+
 ### 12. 17. 2025
 @0755 Menu up and fully styled
 Maybe should add 'back to main site' button on menu page?

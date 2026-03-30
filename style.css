@@ -659,6 +659,13 @@ section#location {
     border: 0;
 }
 
+
+
+
+
+
+
+
 /* --- 8. Footer --- */
 
 .site-footer {
@@ -670,14 +677,16 @@ section#location {
 .footer-grid {
     max-width: 1280px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+/*    grid-template-columns: 1fr;*/
     gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
     .footer-grid {
-        grid-template-columns: 1fr 2fr;
+/*        grid-template-columns: 1fr 2fr 3fr;*/
+    flex-direction: row;
     }
 }
 
@@ -686,6 +695,7 @@ section#location {
     font-weight: 700;
     color: var(--color-highlight-gold);
     margin-bottom: 1rem;
+    width: fit-content;
 }
 
 .contact-info p {
@@ -714,3 +724,33 @@ section#location {
     padding-top: 1rem;
     border-top: 1px solid #333;
 }
+
+
+
+div.footer-grid {}
+
+div.footer-grid div.socials {}
+
+div.footer-grid div.socials ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-top: 36px;
+    margin-left: 0px;
+    padding: 0;
+}
+
+div.footer-grid div.socials ul li {
+/*    margin: 0 20px;*/
+} 
+
+div.footer-grid div.socials ul li a svg {
+    width: 48px;
+    height: 48px;
+    fill: white;
+}
+
+    div.footer-grid div.socials ul li a svg g {
+        fill: white;
+    }
